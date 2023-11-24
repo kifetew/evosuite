@@ -1506,6 +1506,9 @@ public class Properties {
     public static boolean JMC = false;
 
 
+    @Parameter(key = "java_agent_for_client", group = "Debugging", description = "Path to the javaagent to be attached to the JVM running the ClientProcess")
+    public static String JAVA_AGENT_FOR_CLIENT = "";
+    
     // ---------------------------------------------------------------
     // TODO: Fix description
     public enum AlternativeFitnessCalculationMode {

@@ -489,6 +489,11 @@ public class TestGeneration {
                 int logPort = logServer[i].getLogServerPort(); //
                 cmdLineClone.add(1, "-Dmaster_log_port=" + logPort);
                 cmdLineClone.add(1, "-Devosuite.log.appender=CLIENT");
+                
+                // attach the javaagent, if any
+                if (!Properties.JAVA_AGENT_FOR_CLIENT.isEmpty()) {
+                	cmdLineClone.add(1, "-javaagent:" + Properties.JAVA_AGENT_FOR_CLIENT);
+                }
             }
 
             processArgs.add(cmdLineClone.toArray(new String[0]));
